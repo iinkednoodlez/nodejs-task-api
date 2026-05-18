@@ -12,12 +12,12 @@ app.get("/", (req, res) => {
 });
 
 const getTasks = () => {
-  let data = fs.readFileSync("../json/project4-tasks.json", "utf-8");
+  let data = fs.readFileSync("./api.json", "utf-8");
   return JSON.parse(data);
 };
 
 const saveTasks = (tasks) => {
-  fs.writeFileSync("../json/project4-tasks.json", JSON.stringify(tasks, null, 2));
+  fs.writeFileSync("./api.json", JSON.stringify(tasks, null, 2));
 };
 
 app.get("/api/tasks", (req, res) => {
